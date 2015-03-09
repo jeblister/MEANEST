@@ -1,25 +1,67 @@
 <section data-ng-controller="HomeController">
-	<div class="row">
-
-		<div class="col-sm-6" ng-repeat="alert in alerts">
-			<div class="row">
-				<div class="col-xs-4">
-					<h1 class="pull-right">
-						<button type="button" class="btn" ng-class="alert.colour">
-							<i class="glyphicon" ng-class="alert.icon"></i>
-						</button>
-					</h1>
-				</div>
-				<div class="col-xs-8">
-					<h1>{{alert.total}}</h1>
+	<div ng-controller="AppCtrl" layout="column">
+	  <section layout="row" flex>
+	    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+	      <md-toolbar class="md-theme-indigo">
+	        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+	      </md-toolbar>
+	      <md-content class="md-padding" ng-controller="LeftCtrl">
+	        <md-button ng-click="close()" class="md-primary" hide-gt-md>
+	          Close Sidenav Left
+	        </md-button>
+	        <p hide-md show-gt-md>
+	          This sidenav is locked open on your device. To go back to the default behavior,
+	          narrow your display.
+	        </p>
+	      </md-content>
+	    </md-sidenav>
+	    <md-content flex class="md-padding">
+	      <div layout="column" layout-fill layout-align="center center">
+	        <div class="row">
+				<div class="col-sm-6" ng-repeat="alert in alerts">
+					<div class="row">
+						<div class="col-xs-4">
+							<h1 class="pull-right">
+								<button type="button" class="btn" ng-class="alert.colour">
+									<i class="glyphicon" ng-class="alert.icon"></i>
+								</button>
+							</h1>
+						</div>
+						<div class="col-xs-8">
+							<h1>{{alert.total}}</h1>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-8 col-xs-offset-4">
+							<span class="text-muted">{{alert.description}}</span>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-xs-8 col-xs-offset-4">
-					<span class="text-muted">{{alert.description}}</span>
-				</div>
-			</div>
-		</div>
+	        <div>
+	          <md-button ng-click="toggleLeft()"
+	            class="md-primary" hide-gt-md>
+	            Toggle left
+	          </md-button>
+	        </div>
+	        <div>
+	          <md-button ng-click="toggleRight()"
+	            class="md-primary">
+	            Toggle right
+	          </md-button>
+	        </div>
+	      </div>
+	    </md-content>
+	    <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+	      <md-toolbar class="md-theme-light">
+	        <h1 class="md-toolbar-tools">Sidenav Right</h1>
+	      </md-toolbar>
+	      <md-content ng-controller="RightCtrl" class="md-padding">
+	        <md-button ng-click="close()" class="md-primary">
+	          Close Sidenav Right
+	        </md-button>
+	      </md-content>
+	    </md-sidenav>
+	  </section>
 	</div>
-
 </section>

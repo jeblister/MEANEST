@@ -19,7 +19,7 @@ angular.module(ApplicationConfiguration.applicationModuleName)
 	;*/
 	.config(function($mdThemingProvider) {
 	  $mdThemingProvider.theme('default')
-	    .primaryPalette('pink', {
+	    .primaryPalette('purple', {
 	      'default': '400', // by default use shade 400 from the pink palette for primary intentions
 	      'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
 	      'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
@@ -31,7 +31,37 @@ angular.module(ApplicationConfiguration.applicationModuleName)
 	      'default': '200' // use shade 200 for default, and keep all other shades the same
 	    });
 	});
-
+angular.module(ApplicationConfiguration.applicationModuleName)
+.controller('AppCtrl', function($scope, $timeout, $mdSidenav, $log) {
+  $scope.toggleLeft = function() {
+    $mdSidenav('left').toggle()
+                      .then(function(){
+                          $log.debug("toggle left is done");
+                      });
+  };
+  $scope.toggleRight = function() {
+    $mdSidenav('right').toggle()
+                        .then(function(){
+                          $log.debug("toggle RIGHT is done");
+                        });
+  };
+})
+.controller('LeftCtrl', function($scope, $timeout, $mdSidenav, $log) {
+  $scope.close = function() {
+    $mdSidenav('left').close()
+                      .then(function(){
+                        $log.debug("close LEFT is done");
+                      });
+  };
+})
+.controller('RightCtrl', function($scope, $timeout, $mdSidenav, $log) {
+  $scope.close = function() {
+    $mdSidenav('right').close()
+                        .then(function(){
+                          $log.debug("close RIGHT is done");
+                        });
+  };
+});
 
 //Then define the init function for starting up the application
 angular.element(document).ready(function() {
