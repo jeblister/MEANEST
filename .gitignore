@@ -6,5 +6,6 @@ node_modules/
 public/lib
 .bower-*/
 .idea/
+config/
 uploads
 modules/users/client/img/profie/uploads
