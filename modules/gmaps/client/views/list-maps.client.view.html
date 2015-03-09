@@ -1,0 +1,19 @@
+<section data-ng-controller="GmapsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Maps</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="gmap in gmaps" data-ng-href="/#!/gmaps/{{gmap._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="gmap.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="gmap.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="gmap.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!gmaps.$resolved || gmaps.length">
+    	No Maps yet, why don't you <a href="/#!/maps/create">create one</a>?
+    </div>
+</section>

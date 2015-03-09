@@ -17,9 +17,9 @@ angular.module('customers').run(['Menus',
 		});
 
 		// Add the dropdown create item
-		Menus.addSubMenuItem('topbar', 'customers', {
+		/*Menus.addSubMenuItem('topbar', 'customers', {
 			title: 'Create Customers',
 			state: 'customers.create'
-		});
+		});*/
 	}
 ]);

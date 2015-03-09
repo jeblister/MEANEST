@@ -4,7 +4,7 @@ module.exports = {
 	//db: 'mongodb://user:pass@db.mongohq.com:10000/database',
 	db: 'mongodb://localhost/meanestjs',
     app: {
-		title: 'meanApp - Development Environment'
+		title: 'DEV TripStomp - UnRavel Travel'
 	},
 	facebook: {
         clientID: process.env.FACEBOOK_ID || 'APP_ID',
