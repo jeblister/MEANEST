@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://user:pass@db.mongohq.com:10000/database',
+	db: 'mongodb://tripstomp:waxnepke@ds031641.mongolab.com:31641/calmapit',
 	port: 3001,
 	app: {
 		title: 'meanApp - Test Environment'

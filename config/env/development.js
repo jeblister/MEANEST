@@ -2,7 +2,8 @@
 
 module.exports = {
 	//db: 'mongodb://user:pass@db.mongohq.com:10000/database',
-	db: 'mongodb://localhost/meanestjs',
+    db: 'mongodb://tripstomp:waxnepke@ds031641.mongolab.com:31641/calmapit',
+	//db: 'mongodb://localhost/meanestjs',
     app: {
 		title: 'TripStomp - UnRavel Travel'
 	},

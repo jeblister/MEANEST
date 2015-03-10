@@ -35,14 +35,14 @@ angular.module(ApplicationConfiguration.applicationModuleName)
 .controller('AppCtrl', function($scope, $timeout, $mdSidenav, $log) {
   $scope.toggleLeft = function() {
     $mdSidenav('left').toggle()
-                      .then(function(){
-                          $log.debug("toggle left is done");
-                      });
+      .then(function(){
+          $log.debug('toggle left is done');
+      });
   };
   $scope.toggleRight = function() {
     $mdSidenav('right').toggle()
                         .then(function(){
-                          $log.debug("toggle RIGHT is done");
+                          $log.debug('toggle RIGHT is done');
                         });
   };
 })
@@ -50,7 +50,7 @@ angular.module(ApplicationConfiguration.applicationModuleName)
   $scope.close = function() {
     $mdSidenav('left').close()
                       .then(function(){
-                        $log.debug("close LEFT is done");
+                        $log.debug('close LEFT is done');
                       });
   };
 })
@@ -58,7 +58,7 @@ angular.module(ApplicationConfiguration.applicationModuleName)
   $scope.close = function() {
     $mdSidenav('right').close()
                         .then(function(){
-                          $log.debug("close RIGHT is done");
+                          $log.debug('close RIGHT is done');
                         });
   };
 });
