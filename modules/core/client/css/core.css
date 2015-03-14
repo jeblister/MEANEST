@@ -35,3 +35,11 @@ a:hover .header-profile-image {
 body {
 	background-color: #eeeeee;
 	}
+
+.purple_text{
+	color: rgb(171,71,188);
+}
+
+.yellow_text{
+	color: yellow;
+}

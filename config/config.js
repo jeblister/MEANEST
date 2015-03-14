@@ -134,14 +134,14 @@ var initGlobalConfig = function() {
     // Validate NDOE_ENV existance
     validateEnvironmentVariable();
 
-	// Get the default assets
-	var defaultAssets = require(path.join(process.cwd(), 'config/assets/default'));
+    // Get the default assets
+    var defaultAssets = require(path.join(process.cwd(), 'config/assets/default'));
 
-	// Get the current assets
-	var environmentAssets = require(path.join(process.cwd(), 'config/assets/', process.env.NODE_ENV)) || {};
+    // Get the current assets
+    var environmentAssets = require(path.join(process.cwd(), 'config/assets/', process.env.NODE_ENV)) || {};
 
-	// Merge assets
-	var assets = _.extend(defaultAssets, environmentAssets);
+    // Merge assets
+    var assets = _.extend(defaultAssets, environmentAssets);
 
     // Get the default config
     var defaultConfig = require(path.join(process.cwd(), 'config/env/default'));
